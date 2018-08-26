@@ -26,11 +26,7 @@ include_directories(${LLVM_INCLUDE_DIRS} ".")
 add_definitions(${LLVM_DEFINITIONS})
 
 # add pch files
-file(GLOB PCH_FILES *.pch)
-set(INCLUDE_PCH_FILES "")
-foreach(PCH_FILE IN LISTS PCH_FILES)
-  list(APPEND INCLUDE_PCH_FILES ${PCH_FILE})
-endforeach(PCH_FILE)
+file(GLOB INCLUDE_PCH_FILES *.pch)
 set(INCLUDE_PCH_OPT "")
 foreach(INCLUDE_PCH_FILE IN LISTS INCLUDE_PCH_FILES)
   list(APPEND INCLUDE_PCH_OPT "-include-pch ${INCLUDE_PCH_FILE}")
